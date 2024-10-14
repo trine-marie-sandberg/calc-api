@@ -13,6 +13,7 @@ var addRouter = require('./routes/add');
 var subtractRouter = require('./routes/subtract');
 var multiplyRouter = require('./routes/multiply');
 var divideRouter = require('./routes/divide');
+var authRouter = require('./routes/auth');
 
 require('dotenv').config()
 var db = require("./models");
@@ -39,6 +40,7 @@ app.use('/add', addRouter);
 app.use('/subtract', subtractRouter);
 app.use('/multiply', multiplyRouter);
 app.use('/divide', divideRouter);
+app.use('/', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

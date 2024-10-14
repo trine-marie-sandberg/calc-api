@@ -14,6 +14,11 @@ var subtractRouter = require('./routes/subtract');
 var multiplyRouter = require('./routes/multiply');
 var divideRouter = require('./routes/divide');
 
+require('dotenv').config()
+var db = require("./models");
+db.sequelize.sync({ force: false })
+var app = express();
+
 var app = express();
 
 // view engine setup
